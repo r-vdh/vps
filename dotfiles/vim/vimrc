@@ -1,0 +1,54 @@
+""""""""""""""
+" ~/vim/vimrc "
+"""""""""""""""
+" Disable compatibility with vi which can cause unexpected issues.
+set nocompatible
+
+" Colored syntax
+syntax enable
+" No backup or swap files
+set nobackup
+set nowritebackup
+set noswapfile
+" Search settings
+set incsearch
+set hlsearch
+" Show line numbers
+set number
+
+
+" Tab Settings
+filetype indent on  " load filetype specific indent files
+set tabstop=2       " > key
+set shiftwidth=2    " tab key
+set expandtab       " tabs are spaces
+
+""""""""""""
+" Mappings "
+""""""""""""
+map <C-x> :! chmod 700 %<CR>
+""""""""
+" HTML "
+""""""""
+" inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+autocmd FileType html inoremap ;i <em></em>
+autocmd FileType html inoremap ;b <b></b>
+autocmd FileType html inoremap ;1 <h1></h1>
+autocmd FileType html inoremap ;2 <h2></h2>
+autocmd FileType html inoremap ;3 <h3></h3>
+autocmd FileType html inoremap ;4 <h4></h4>
+autocmd FileType html inoremap ;5 <h5></h5>
+autocmd FileType html inoremap ;6 <h6></h6>
+
+""""""""""""""""
+" Highlighting "
+""""""""""""""""
+hi MatchParen cterm=Bold ctermbg=None ctermfg=Magenta
+
+"""""""""""""""
+" Colorscheme "
+"""""""""""""""
+colorscheme habamax
+
+
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags

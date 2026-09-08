@@ -1,0 +1,52 @@
+#!/bin/sh
+### ~./bash_alias
+
+
+# ls
+[ -x /usr/bin/dircolors ] && {
+  [ -r ~/.dircolors ] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto --group-directories-first'
+  alias dir='dir --color=auto --group-directories-first'
+  alias vdir='vdir --color=auto --group-directories-first'
+  alias grep='grep --color=auto'; }
+alias ll='ls -lAF'
+alias la='ls -A'
+alias l='ls -CF'
+alias l1='ls -1 $1;echo'
+alias ls1='ls -1'
+
+# echo
+alias ek='echo'
+alias ekk='echo;echo'
+
+# allow alias usage with sudo
+alias sudo='sudo '
+
+# clear screen
+alias cls='printf "\033c"'
+alias c='clear'
+
+# edit configs
+alias cfalias='vim ~/.config/bash_alias'
+alias cffunction='vim ~/.config/bash_function'
+alias cfenv='vim ~/.config/bash_env'
+alias cfvim='vim ~/.config/vim/vimrc'
+
+# TMUX
+alias tm-attach="tmux attach-session -t $1"
+alias tm-list="tmux list-sessions"
+
+# ranger
+alias ragner="ranger"
+alias r="ranger"
+
+# vim
+alias v="vim"
+
+# systemctl
+alias s="systemctl"
+
+# MISCELLANEOUS
+alias myip="curl ipinfo.io/ip" #get public IP
+alias ports="netstat -tulanp"
+alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts" #wget

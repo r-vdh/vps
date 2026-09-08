@@ -1,0 +1,26 @@
+# ~/.config/bash_env
+
+export EDITOR=vim
+
+###############
+## XDG Setup ##
+###############
+## XDG BASE DIRECTORY ##
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+  # $XDG_CONFIG_HOME
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+export INPUTRC="$XDG_CONFIG_HOME"/inputrc
+export HOSTALIASES="$XDG_CONFIG_HOME/hosts"
+
+######################
+## ADD DIRS TO PATH ##
+######################
+## Add ~/bin to $PATH
+export PATH=/$USER/bin:$PATH
+
+##########################
+## Prompt Configuration ##
+##########################
+PS1="\e[1;31m\u@\h\e[m \e[0;32m\w\e[m \e[1;31m> \e[m"

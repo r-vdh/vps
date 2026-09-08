@@ -1,0 +1,21 @@
+# nginx server block for example.com
+# reference for editing /etc/nginx/sites-available/<sitename>
+
+server {
+  listen 80;
+  listen [::]:80;
+  server_name www.example.com;
+  return 301 $scheme://example.com$request_uri;
+}
+
+server {
+  listen 80;
+  listen [::]:80;
+  server_name example.com;
+  root /var/www/example;
+  index index.html index.htm index.nginx-debian.html;
+
+  location / {
+      try_files $uri $uri/ =404;
+  }
+}

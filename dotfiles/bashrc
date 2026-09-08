@@ -1,0 +1,23 @@
+# ~/.bashrc
+
+# Source .bash_aliases and .bash_env (if exist)
+[ -f "$HOME/.config/bash_env" ] && source "$HOME/.config/bash_env"
+[ -f "$HOME/.config/bash_alias" ] && source "$HOME/.config/bash_alias"
+[ -f "$HOME/.config/bash_function" ] && source "$HOME/.config/bash_function"
+[ -f "$HOME/.config/bash_completion" ] && source "$HOME/.config/bash_completion"
+# Some Vultr stuff
+[[ -f /opt/vultr/vultr_app.sh ]] && . /opt/vultr/vultr_app.sh
+
+# Activate vi mode with <Escape> 
+set -o vi
+bind -m vi-command 'Control-l: clear-screen'
+bind -m vi-insert 'Control-l: clear-screen'
+
+# enable globstar
+shopt -s globstar
+
+# ignore minor errors in the spelling of a cd command
+shopt -s cdspell
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
