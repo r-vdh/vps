@@ -1,6 +1,6 @@
 # VPS Setup
 
-Basic setup scripts and config files for a new Vultr VPS.
+Basic setup scripts and config files for a new VPS.
 
 ## Files
 
